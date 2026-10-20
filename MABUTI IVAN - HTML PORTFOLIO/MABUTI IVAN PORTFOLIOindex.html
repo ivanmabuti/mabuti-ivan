@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Mabuti | My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0ca2c8;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #111f43;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #101c3a, #27496d);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .profile {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #00d4ff;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .intro h3 {
+            color: #00d4ff;
+            letter-spacing: 4px;
+            font-size: 16px;
+        }
+
+        .intro h1 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .intro h2 {
+            color: #00d4ff;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #e0eaf5;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00d4ff;
+            color: #101c3a;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(16, 28, 58, 0.12);
+            border-top: 4px solid #00bce4;
+        }
+
+        .card h2 {
+            color: #101c3a;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .card h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #00d4ff;
+            margin-top: 8px;
+        }
+
+        .card p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #101c3a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #00bce4;
+            color: #101c3a;
+            transform: translateY(-3px);
+        }
+
+        .hobby {
+            background: #f0f8ff;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00bce4;
+            border-radius: 8px;
+        }
+
+        .hobby h3 {
+            color: #27496d;
+            margin-bottom: 5px;
+        }
+
+        
+        
+        .project {
+        background: white;
+        padding: 30px;
+        margin-bottom: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(16, 28, 58, 0.12);
+        border-top: 4px solid #00d4ff;
+        }
+
+        
+        .project-title {
+        text-align: center;
+        font-size: 28px;
+        color: #101c3a;
+        margin-bottom: 25px;
+        }
+
+        
+        .project-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        }
+
+        
+        .project-card {
+        background: #f0f8ff;
+        padding: 18px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #d8eaf5;
+        transition: 0.3s;
+        }
+
+    
+        .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        }
+
+        
+        .project-card h3 {
+        color: #101c3a;
+        font-size: 19px;
+        margin-bottom: 10px;
+        }
+
+        
+        .project-card p {
+        color: #444;
+        font-size: 14px;
+        line-height: 1.6;
+        }
+
+        /* MOBILE DESIGN */
+        @media (max-width: 600px) {
+        .project {
+        padding: 20px;
+        }
+
+        .project-title {
+        font-size: 24px;
+        }
+
+        .project-card img {
+        height: 160px;
+        }
+        }
+
+
+       
+
+        footer {
+            background: #101c3a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer span {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 22px;
+            }
+
+            .intro {
+                padding: 40px 15px;
+            }
+
+            .intro h1 {
+                font-size: 32px;
+            }
+
+            .intro h2 {
+                font-size: 18px;
+            }
+
+            .profile {
+                width: 145px;
+                height: 145px;
+            }
+
+            .container {
+                margin: 25px auto;
+                padding: 0 15px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .card h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        MY PORTFOLIO
+    </header>
+
+
+    <section class="intro">
+
+        <img src="ivan.jpg" alt="Photo of Ivan Mabuti" class="profile">
+
+        <h3>HELLO, I'M</h3>
+        <h1>IVAN MABUTI</h1>
+        <h2>Information Technology Student</h2>
+
+        <p>
+            I am an Information Technology student interested in
+            web development, programming, and graphic design.
+            I enjoy solving problems, learning new skills, and
+            challenging myself to become better every day.
+        </p>
+
+        <a href="#about" class="btn">Discover More</a>
+
+    </section>
+
+    <main class="container">
+
+
+        <section class="card" id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am a hardworking and determined person who enjoys
+                taking on challenges and finding solutions to problems.
+                I believe that every problem is an opportunity to learn,
+                grow, and improve my skills.
+            </p>
+
+            <p>
+                I am also passionate about graphic design because it
+                allows me to express my creativity and artistic talents.
+                Art and design are among my favorite hobbies. I enjoy
+                combining creativity with technical skills when
+                creating programs and projects.
+            </p>
+
+            <p>
+                I am eager to explore new ideas, develop my abilities,
+                and discover different ways to overcome challenges.
+                With hard work, creativity, and a willingness to learn,
+                I hope to achieve my goals and build a successful career
+                in the technology field.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>My Skills</h2>
+
+            <p>These are some of my skills and areas of interest:</p>
+
+            <div class="skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">Oracle Programming</span>
+                <span class="skill">Graphic Design</span>
+                <span class="skill">Problem Solving</span>
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Hobbies &amp; Interests</h2>
+
+            <div class="hobby">
+                <h3>&#127912;Arts &amp; Design</h3>
+                <p>
+                    I enjoy drawing anime characters and exploring
+                    my creativity through different designs.
+                </p>
+            </div>
+
+            <div class="hobby">
+                <h3>&#128187; Technology</h3>
+                <p>
+                    I enjoy learning about computers, programming,
+                    and creating simple projects.
+                </p>
+            </div>
+
+            <div class="hobby">
+                <h3>&#128176; Financial Goals</h3>
+                <p>
+                    I am interested in earning money, becoming
+                    financially independent, and building a better future.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Career Goal</h2>
+
+            <p>
+                My goal is to become a skilled IT professional who
+                can create useful websites, develop programs, and
+                design creative digital projects. I want to continue
+                learning, gain experience, and use my skills to
+                build a successful future.
+            </p>
+
+        </section>
+
+
+        <section class="card contact" id="contact">
+
+           
+        
+
+            <h2>Contact Information</h2>
+
+            <p>
+                <strong>&#128231;Email:</strong>
+                <a href="mailto:mabutiivan39@gmail.com">mabutiivan39@gmail.com</a>
+            </p>
+
+            <p><strong>&#128241;Phone:</strong> 0962 - 1700 - 221</p>
+
+            <p><strong>&#128204;Location:</strong> Quezon City, Philippines</p>
+
+            <p>
+                <strong>&#128101;Facebook:</strong>
+                <a href="https://www.facebook.com/ivan.mabuti.2025" target="_blank">
+                    Ivan Mabuti
+                </a>
+            </p>
+           
+
+
+      
+    <section class="project" id="projects">
+
+        <h2 class="project-title">My Projects</h2>
+
+        <div class="project-list">
+
+            <div class="project-card">
+                <img src="login.PNG" alt="Login Form Project">
+                <h3>Login Form</h3>
+                <p>
+                    I created a simple login form using HTML and CSS
+                    with a clean and user-friendly design.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <img src="regform.PNG" alt="Registration Form Project">
+                <h3>Registration Form</h3>
+                <p>
+                    I created a registration form where users can
+                    enter their personal information.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <img src="oop.PNG" alt="Toy Car Management System">
+                <h3>Toy Car Management System</h3>
+                <p>
+                    I developed a simple Python project for managing
+                    toy car information and inventory.
+                 </p>
+             </div>
+
+        </div>
+
+    </section>
+
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 <span>Ivan Mabuti</span> |
+            My Personal Portfolio
+        </p>
+    </footer>
+
+</body>
+
+</html>
